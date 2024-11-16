@@ -120,7 +120,7 @@ class ShellEmulator:
         self.root.title("Shell Emulator")
         self.prompt_length = 0
 
-        self.output = scrolledtext.ScrolledText(root, height=20, width=80, state=tk.DISABLED, bg="black", fg="white")
+        self.output = scrolledtext.ScrolledText(root, height=30, width=80, state=tk.DISABLED, bg="black", fg="white")
         self.output.pack()
 
         self.input = tk.Entry(root, width=80)
@@ -134,7 +134,6 @@ class ShellEmulator:
 
         # Вывод содержимого лог-файла
         self.display_log()
-
         self.update_prompt()
 
     def display_log(self):
@@ -164,10 +163,17 @@ class ShellEmulator:
         self.update_prompt()
         self.output.config(state=tk.DISABLED)
 
-    def log_action(self, command):
+    def log_action(self, command_input):
         if self.log_file:
+            # Splitting the command input into command and operands
+            parts = command_input.split(maxsplit=1)
+            command = parts[0]
+            operands = parts[1] if len(parts) > 1 else ""
+
+            # Writing the log entry with the correct format
             with open(self.log_file, 'a') as log:
-                log.write(f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}, {command}\n")
+                log.write(f"{datetime.now().strftime('%Y-%m-%d,%H:%M:%S')},{command},{operands}\n")
+
 
     def on_key_press(self, event):
         if self.input.index(tk.INSERT) < self.prompt_length and event.keysym in ("BackSpace", "Left"):
@@ -294,5 +300,5 @@ def main():
     root.mainloop()
 
 
-if __name__ == "__main__":  # Исправлено на __name__ == "__main__"
+if __name__ == "__main__":
     main()
