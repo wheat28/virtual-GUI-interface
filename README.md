@@ -159,6 +159,6 @@
   - **`shell`:** Экземпляр `ShellEmulator`, в котором будут выполнены команды.
 ## Результаты тестирования
 ![image](https://github.com/user-attachments/assets/f017eb96-25f3-4bfc-9ac6-dd6ed44646bb)
-![image](https://github.com/user-attachments/assets/8dd28cc9-a86b-41e4-8744-b811f103b869)
-![image](https://github.com/user-attachments/assets/c6d5689c-8e07-4af4-9f1b-16da9247e6e5)
-![image](https://github.com/user-attachments/assets/0388e56e-ba99-46c4-992f-a6ad9035fbbc)
+![image](https://github.com/user-attachments/assets/08419318-8f1c-4265-b417-c7f8fe8e2101)
+![image](https://github.com/user-attachments/assets/6bc091c3-df6c-480e-be6b-f2ab43696df0)
+![image](https://github.com/user-attachments/assets/7b974799-fd02-454b-8808-d957389850c6)
